@@ -7,7 +7,11 @@ import axios from 'axios';
 const Main = () => {
     const inputUrlRef = useRef<HTMLInputElement>(null); // Specify the type of the ref
     const [urlResult, setUrlResult] = useState<string | null>(null); // Specify the type of the state
-    const axios = require('axios');
+
+    const api = process.env.NEXT_PUBLIC_API_KEY;
+
+
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
 
@@ -18,7 +22,7 @@ const Main = () => {
                 method: 'get',
                 url: 'https://youtube-mp36.p.rapidapi.com/dl',
                 headers: {
-                    'X-RapidAPI-Key': "e5c4575d48mshc49f7a0ec99152cp1ba783jsne6f285ce9a30",
+                    'X-RapidAPI-Key': api,
                     'X-RapidAPI-Host': 'youtube-mp36.p.rapidapi.com'
                 },
                 params: {
@@ -43,13 +47,13 @@ const Main = () => {
                 <input
                     ref={inputUrlRef}
                     className='p-5 sm:w-1/2 w-full rounded-xl'
-                    placeholder="Paste a Youtube video URL link..." type="text"
+                    placeholder="Pega un enlace URL de video de Youtube..." type="text"
                 />
                 <button
-                    className='bg-black text-white font-bold p-5 rounded-xl w-1/8 lg:w-1/10'
+                    className='bg-black text-white font-bold p-5 rounded-xl w-1/8 lg:w-1/10 btn'
                     type='submit'
                 >
-                    Search
+                    Búsqueda
                 </button>
             </form>
 
@@ -57,10 +61,10 @@ const Main = () => {
             {urlResult ? <a
                 target='_blank'
                 rel='noreferrer'
-                className='font-bold'
+                className='font-bold bg-red-600 p-5 rounded-xl text-white border descargar'
                 href={urlResult}
             >
-                Download MP3
+                Descargar MP3
             </a> : ""
             }
 

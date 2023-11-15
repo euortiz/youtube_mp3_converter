@@ -7,3 +7,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.btn:hover {
+  background: white;
+  color: black;
+  transition: 0.3s ease, color 0.3s ease;
+  text-decoration: underline;
+}
+
+.descargar:hover {
+  background: #161E30;
+  transition: 0.3s ease, color 0.3s ease;
+  text-decoration: underline;
+}

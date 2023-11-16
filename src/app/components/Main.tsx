@@ -8,10 +8,6 @@ const Main = () => {
     const inputUrlRef = useRef<HTMLInputElement>(null); // Specify the type of the ref
     const [urlResult, setUrlResult] = useState<string | null>(null); // Specify the type of the state
 
-
-
-
-
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
 

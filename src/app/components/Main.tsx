@@ -8,7 +8,7 @@ const Main = () => {
     const inputUrlRef = useRef<HTMLInputElement>(null); // Specify the type of the ref
     const [urlResult, setUrlResult] = useState<string | null>(null); // Specify the type of the state
 
-    const api = process.env.NEXT_PUBLIC_API_KEY;
+
 
 
 
@@ -22,12 +22,12 @@ const Main = () => {
                 method: 'get',
                 url: 'https://youtube-mp36.p.rapidapi.com/dl',
                 headers: {
-                    'X-RapidAPI-Key': api,
+                    'X-RapidAPI-Key': process.env.NEXT_PUBLIC_API_KEY,
                     'X-RapidAPI-Host': 'youtube-mp36.p.rapidapi.com'
                 },
                 params: {
                     id: youtubeID
-                }
+                },
             }
 
             axios(options)
